@@ -19,9 +19,15 @@ Each script is self-contained, seeded for deterministic output (`np.random.seed(
 | 009 | [Higher-Order and Variable-Order Markov Models for Long-Memory Fraud Schemes](https://sheepdogprosperitypartners.com/higher-order-variable-order-markov-long-memory/) | [`stochastic_markov/009_higher_order_variable_order_markov.py`](stochastic_markov/009_higher_order_variable_order_markov.py) |
 | 010 | [Transaction-Timing Diagnostics in the CTMC Family](https://sheepdogprosperitypartners.com/continuous-time-markov-chains-transaction-timing/) | [`stochastic_markov/010_continuous_time_markov.py`](stochastic_markov/010_continuous_time_markov.py) |
 
+## Public-Data Screening Companions
+
+| Article | Companion artifact |
+|---|---|
+| [Screening a State's Medicaid Market with Public Data](https://sheepdogprosperitypartners.com/dd-tech-lab/) | [`medicaid_public_data_screening/screening-a-states-medicaid-market-with-public-data.ipynb`](medicaid_public_data_screening/screening-a-states-medicaid-market-with-public-data.ipynb) |
+
 ## How to run
 
-Standard Python 3.10+ environment with `numpy`, `pandas`, `scipy`, `statsmodels`. Article 007 additionally needs `arch`. Install everything via:
+Standard Python 3.10+ environment with `numpy`, `pandas`, `scipy`, `statsmodels`. Article 007 additionally needs `arch`. The Medicaid public-data notebook uses `requests` and `duckdb`. Install the stochastic dependencies via:
 
 ```bash
 pip install numpy pandas scipy statsmodels arch hmmlearn
@@ -34,6 +40,16 @@ python stochastic_markov/008_two_stage_screen.py
 ```
 
 Each script prints its deterministic output to stdout. The printed output matches the numbers cited in the corresponding article.
+
+For the Medicaid public-data notebook:
+
+```bash
+cd medicaid_public_data_screening
+pip install -r requirements.txt
+jupyter notebook screening-a-states-medicaid-market-with-public-data.ipynb
+```
+
+Large public-data files such as CMS Parquet, LEIE CSV, DuckDB databases, and generated provider caches are intentionally ignored by git.
 
 ## License
 

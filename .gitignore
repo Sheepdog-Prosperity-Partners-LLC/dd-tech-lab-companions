@@ -1,0 +1,10 @@
+*.parquet
+*.duckdb
+*.csv
+nppes_nv_records.json
+leie*.txt
+leie*.zip
+.ipynb_checkpoints/
+__pycache__/
+.venv/
+venv/
