@@ -25,6 +25,14 @@ Each script is self-contained, seeded for deterministic output (`np.random.seed(
 |---|---|
 | [Screening a State's Medicaid Market with Public Data](https://sheepdogprosperitypartners.com/dd-tech-lab/) | [`medicaid_public_data_screening/screening-a-states-medicaid-market-with-public-data.ipynb`](medicaid_public_data_screening/screening-a-states-medicaid-market-with-public-data.ipynb) |
 
+## Numerical Forensic Technique Companions
+
+| Article | Companion artifact |
+|---|---|
+| [Beyond Benford's Law: a Hands-On Tour of Fraud-Detection Techniques](https://sheepdogprosperitypartners.com/dd-tech-lab/) | [`forensic_numeric_techniques/beyond-benford-fraud-detection-techniques.ipynb`](forensic_numeric_techniques/beyond-benford-fraud-detection-techniques.ipynb) |
+
+This companion is pure standard library (no third-party packages) and ships with synthetic data and outputs included.
+
 ## How to run
 
 Standard Python 3.10+ environment with `numpy`, `pandas`, `scipy`, `statsmodels`. Article 007 additionally needs `arch`. The Medicaid public-data notebook uses `requests` and `duckdb`. Install the stochastic dependencies via:
