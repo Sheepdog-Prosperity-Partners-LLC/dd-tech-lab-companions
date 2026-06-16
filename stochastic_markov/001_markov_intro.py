@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Companion artifact for DD Tech Lab Stochastic / Markov Article 001 —
+"""Companion artifact for DD Tech Lab Stochastic / Markov Article 001,
 First-Order Markov Modeling for Transaction-Stream Analysis in Audit.
 
 End-to-end reproducible script. Generates 950 baseline transactions and injects
@@ -84,7 +84,7 @@ def main():
     assert np.allclose(P_baseline.sum(axis=1), 1.0)
 
     print("=" * 70)
-    print("DD Tech Lab Stochastic Article 001 — companion artifact")
+    print("DD Tech Lab Stochastic Article 001, companion artifact")
     print("=" * 70)
 
     # 950 baseline states (clean Markov-chain sampling)

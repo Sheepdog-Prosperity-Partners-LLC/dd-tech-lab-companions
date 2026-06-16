@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Companion artifact for DD Tech Lab Stochastic / Markov Article 007 —
+"""Companion artifact for DD Tech Lab Stochastic / Markov Article 007,
 Stochastic Volatility Models for Restatement-Timing Anomalies.
 
 End-to-end reproducible script. Synthesizes a 240-month restatement-count
@@ -137,7 +137,7 @@ def conditional_volatility_alerts(cond_vol: pd.Series,
 # =============================================================================
 def main() -> None:
     print("=" * 78)
-    print("DD Tech Lab Stochastic Article 007 — companion artifact")
+    print("DD Tech Lab Stochastic Article 007, companion artifact")
     print("GARCH(1, 1) early-warning indicator on synthetic 240-month restatement panel")
     print("=" * 78)
 

@@ -1,6 +1,10 @@
 *.parquet
 *.duckdb
 *.csv
+!**/data/sample/*.csv
+!**/data/synthetic/*.csv
+!**/data/redacted_outputs/*.csv
+!output/*.csv
 nppes_nv_records.json
 leie*.txt
 leie*.zip
@@ -8,3 +12,6 @@ leie*.zip
 __pycache__/
 .venv/
 venv/
+
+# QA review screenshots (kept locally, not published)
+output/notebook_review/screenshots/

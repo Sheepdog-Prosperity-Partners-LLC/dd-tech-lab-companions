@@ -1,0 +1,1358 @@
+{
+  "prepared_by": "Noah Green CPA CFE",
+  "date": "2026-06-16",
+  "matter": "SPP-DDTL-REPO-OPS-2026",
+  "canonical_repo": "Sheepdog-Prosperity-Partners-LLC/dd-tech-lab-companions",
+  "local_repo": "/Users/noah.r.green/dd-tech-lab-companions",
+  "branch": "add/forensic-numeric-techniques-notebook",
+  "remote": "https://github.com/Sheepdog-Prosperity-Partners-LLC/dd-tech-lab-companions.git",
+  "manifest_note": "This manifest excludes its own hash by design because embedding a self-hash would change the file.",
+  "summary": {
+    "repo_files_changed_or_added_excluding_manifest": 170,
+    "article_files_changed": 6,
+    "inventory_rows": 52,
+    "inventory_status_counts": {
+      "complete": 15,
+      "complete_local_pending_publication": 1,
+      "complete_with_output_review_question": 2,
+      "excluded_chart_asset_tooling": 2,
+      "excluded_from_worked_example_scope": 31,
+      "pending_operator_confirmation": 1
+    },
+    "notebooks_reviewed": 21,
+    "notebook_review_status_counts": {
+      "PASS": 21
+    },
+    "screenshots": 63
+  },
+  "verification": [
+    {
+      "command": ".venv/bin/python tools/check_duality.py",
+      "result": "pass",
+      "evidence": "DD Tech Lab duality check passed."
+    },
+    {
+      "command": ".venv/bin/python -m py_compile stochastic_markov/*.py medicaid_public_data_screening/*.py forensic_numeric_techniques/*.py medicare_outlier_screen/*.py national_security_diligence/notebooks/*.py national_security_diligence/ns_screen.py national_security_diligence/src/ns_diligence/*.py national_security_diligence/tests/*.py tools/check_duality.py",
+      "result": "pass",
+      "evidence": "exit code 0"
+    },
+    {
+      "command": "PYTHONPATH=national_security_diligence/src .venv/bin/python -m unittest discover -s national_security_diligence/tests -p test_*.py",
+      "result": "pass",
+      "evidence": "33 tests OK, 4 skipped live-source tests"
+    },
+    {
+      "command": ".venv/bin/python medicare_outlier_screen/medicare_outlier_screen.py with synthetic cache",
+      "result": "pass",
+      "evidence": "12 rows screened, 1 synthetic lead"
+    },
+    {
+      "command": "notebook execution and screenshot review",
+      "result": "pass",
+      "evidence": "21 notebooks PASS in output/notebook_review/REVIEW_LOG.md; 63 screenshots captured"
+    },
+    {
+      "command": "repo policy scan",
+      "result": "pass",
+      "evidence": "0 prose typography or banned tool-name findings under scanned public repo surfaces"
+    },
+    {
+      "command": "gh repo view Sheepdog-Prosperity-Partners-LLC/national-security-diligence-lab --json isArchived,url",
+      "result": "pass",
+      "evidence": "standalone repo is archived"
+    }
+  ],
+  "unresolved_flags": [
+    {
+      "id": "CROSS_BORDER_CONFIRMATION",
+      "status": "operator_confirmation_required",
+      "detail": "Cross-border atlas remains local until owner confirms publication into this canonical repo."
+    },
+    {
+      "id": "CHART_TOOLING_SCOPE",
+      "status": "classified_excluded",
+      "detail": "Gold/watch and SNAP chart builders classified as article asset tooling, not worked-example companions."
+    },
+    {
+      "id": "LIVE_SITE_POINTER",
+      "status": "operator_wordpress_edit_required",
+      "detail": "Live DD Tech Lab index still points to archived personal repository; output/SITE_POINTER_FIX.md gives the exact edit."
+    },
+    {
+      "id": "MARKOV_003_OUTPUT_PARITY",
+      "status": "owner_review_required",
+      "detail": "HMM companion executes, but current precision and recall output differs from article draft output under installed dependencies."
+    },
+    {
+      "id": "MARKOV_005_OUTPUT_PARITY",
+      "status": "owner_review_required",
+      "detail": "Random-walk companion executes, but the current seeded first-five-value output differs from the article draft comment."
+    }
+  ],
+  "changed_or_added_files": [
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "M",
+      "path": ".gitignore",
+      "size_bytes": 206,
+      "sha256": "bc3ea5dd1437e43b8e59e44a36a63bece80b3c70ca45cf60d274106c1c098200"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "M",
+      "path": "README.md",
+      "size_bytes": 6719,
+      "sha256": "a2c9417968344407990c40abe8d419b98e8666499718737fc6d7be69e9eee3ab"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "M",
+      "path": "forensic_numeric_techniques/beyond-benford-fraud-detection-techniques.ipynb",
+      "size_bytes": 50270,
+      "sha256": "0c0af0900fb72e60cb9cfa192b328a2fc57f0981d7d413af075cbc7f865b6290"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "M",
+      "path": "medicaid_public_data_screening/screening-a-states-medicaid-market-with-public-data.ipynb",
+      "size_bytes": 23442,
+      "sha256": "4d4cfd22ccd1552d5f06f8717028ede7bc16fcd4ae21d10808f7d35cbf94f81d"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "M",
+      "path": "stochastic_markov/001_markov_intro.py",
+      "size_bytes": 5286,
+      "sha256": "ae2e195dc18b9b787ef70c02914e69f6e9e71a508862b4b3b04df01196ddf2e8"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "M",
+      "path": "stochastic_markov/002_journal_entry_production.py",
+      "size_bytes": 10437,
+      "sha256": "9841da89b58cab5f3e7abc13b1ccaa80131c2f08cb45585cfc950417e7e6116a"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "M",
+      "path": "stochastic_markov/007_garch_restatement_timing.py",
+      "size_bytes": 9558,
+      "sha256": "a549303e3adbe15453c0cfacf00a11e76db1ce14646f952c7f064790e804d3cd"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "M",
+      "path": "stochastic_markov/009_higher_order_variable_order_markov.py",
+      "size_bytes": 10835,
+      "sha256": "f619764b480b84364add8cc7d7ce5afa33d0a30ee61994a9b4b63cb5eb20889b"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": ".github/workflows/duality-check.yml",
+      "size_bytes": 352,
+      "sha256": "8c6e4a8b0d22854ce17880597434ba51d28acb5e181d3f7cfa0cf63a16502708"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "CONTRIBUTING.md",
+      "size_bytes": 1688,
+      "sha256": "e0860687f47d58b7d08941fd059e1385b5417e543c2f73e7456d8262f3f9fda7"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "forensic_numeric_techniques/beyond-benford-fraud-detection-techniques.py",
+      "size_bytes": 18536,
+      "sha256": "7a598c34ec4507f4d7a0a7af0746ce3b0e31a7aa4ace2627670a98e0762448f5"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "medicaid_public_data_screening/screening-a-states-medicaid-market-with-public-data.py",
+      "size_bytes": 13985,
+      "sha256": "ca304f8d062caeb092bdeeee2d1be243b96b7a7d5b58102d16a4a7f6d055673a"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "medicare_outlier_screen/README.md",
+      "size_bytes": 1030,
+      "sha256": "fca70e551001e73d48b065a3d41ff06ae67deb871c429029d9a9d55f4ed211ea"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "medicare_outlier_screen/data/sample/medicare_hcpcs_36902_synthetic.csv",
+      "size_bytes": 1058,
+      "sha256": "60338d40e4994e7edc0704c15df943f4fba1673a8ecbbd8cf05062ba35eba39b"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "medicare_outlier_screen/medicare_outlier_screen.ipynb",
+      "size_bytes": 1664,
+      "sha256": "ddee8c3336aae8383e5ffaa82618988d011e6e2d8eae16621dcf08e4cd32cc3c"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "medicare_outlier_screen/medicare_outlier_screen.py",
+      "size_bytes": 6212,
+      "sha256": "62c89e6a42d122741d393cf1455c1fa7cb9bee1a94c7918d61bcef5498328e86"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "medicare_outlier_screen/requirements.txt",
+      "size_bytes": 7,
+      "sha256": "fd6f8460ec2c463c8eedfa9a900217d09defbef0aacd2599f33e51b675c8483c"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "national_security_diligence/.gitignore",
+      "size_bytes": 116,
+      "sha256": "47cd2c97d0dd78917dd9a2a24beffaf87e4b326d586a12b0f568a3c86e1a2d31"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "national_security_diligence/LICENSE",
+      "size_bytes": 1067,
+      "sha256": "c5ed68168c708bd25e4b14a176a226cb024fb2dc0f6ba14964457aa4f144f007"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "national_security_diligence/README.md",
+      "size_bytes": 3382,
+      "sha256": "86b24bb13c406357325d8ef058b97be8c9accea651be1122b217313260bcef2c"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "national_security_diligence/RELEASE_NOTES.md",
+      "size_bytes": 603,
+      "sha256": "d151d888cb05d0bba1b50c05b9fd38c1d27b06c59efe84d129ce22be0306d9f9"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "national_security_diligence/data/redacted_outputs/README.md",
+      "size_bytes": 255,
+      "sha256": "751d9288aed1141abd6ea842a4a30cba6f9a04197e7cbbe6564da2f3b4fe88ee"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "national_security_diligence/data/redacted_outputs/a1_cfius_public_actions_sample.csv",
+      "size_bytes": 7933,
+      "sha256": "88aa7c92011b9a3f15813288ea207f6d0c822aa27b44015bcf1a20644c315a29"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "national_security_diligence/data/redacted_outputs/a2_outbound_triage_sample.csv",
+      "size_bytes": 849,
+      "sha256": "b1f86780119cba52ee64feed168835673eb950d77bf1837b82c6372b550b56d0"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "national_security_diligence/data/redacted_outputs/c1_data_threshold_sample.csv",
+      "size_bytes": 1623,
+      "sha256": "c20883b279da4e194a02de0feb9783b34c8ae92ea898c35fc2d138695c0f4b62"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "national_security_diligence/data/redacted_outputs/c2_forfeiture_timeline_sample.csv",
+      "size_bytes": 2711,
+      "sha256": "97aa024a4ea221a4fef9eb20f2b907c09e1328650f72eaa4105498c4de8e1a2d"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "national_security_diligence/data/redacted_outputs/c3_bounty_program_matrix.csv",
+      "size_bytes": 3061,
+      "sha256": "59b5d45610bcfcf5edfd05b5b58c5f9979d8589ffe3fa5982281ad84c37cd0f5"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "national_security_diligence/data/redacted_outputs/d1_integrated_workflow_sample.csv",
+      "size_bytes": 2499,
+      "sha256": "51df10880ec729cf68ece95a6e78398e360bfceec3b677d8177384793e422ff3"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "national_security_diligence/data/redacted_outputs/d2_ns_screen_sample.csv",
+      "size_bytes": 394,
+      "sha256": "8540e847707e3db88b67204373dd6d9a31efcada194146e5e086240ec3a312d8"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "national_security_diligence/data/redacted_outputs/d2_ownership_graph_sample.csv",
+      "size_bytes": 317,
+      "sha256": "5067581f97bc5cdc4feb8f81ebd011bcb61032de9402a833e5b428766a82fae4"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "national_security_diligence/data/redacted_outputs/d3_remedy_comparison_timeline.csv",
+      "size_bytes": 2896,
+      "sha256": "3b03d50aa206f7bdc9123399b56f16db7a5420583dcb6891aadd2dc8fa3214ba"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "national_security_diligence/data/sample/README.md",
+      "size_bytes": 217,
+      "sha256": "3b46a8700ebcdfa2192ff7e33c038fc3c29f88990dd5028d0af671ce283fda88"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "national_security_diligence/data/sample/c2_public_forfeiture_events.csv",
+      "size_bytes": 2678,
+      "sha256": "c713bb599d2bb8a46c9fe19870c803df9ab9412bf878d309d258b5adf6f44fb4"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "national_security_diligence/data/sample/c3_whistleblower_programs.csv",
+      "size_bytes": 3023,
+      "sha256": "021906a043587cf34aaeca56409803e3c3ae4542396fffe7038e92eddc7b6494"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "national_security_diligence/data/sample/cfius_annual_report_figures.csv",
+      "size_bytes": 6673,
+      "sha256": "961a7f032fa726d444cd0049a21fae66bbc69192b764503c40993a4638d62bb7"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "national_security_diligence/data/sample/d2_fixture_screening_list.csv",
+      "size_bytes": 295,
+      "sha256": "56df183a3d95047275a30d4bd47648150338ae599d842dd4cf11eefe113af7f4"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "national_security_diligence/data/sample/d3_remedy_comparison_events.csv",
+      "size_bytes": 2145,
+      "sha256": "aa71568124da4f86a4bfa98050776f897eb8c3a9d924877b3d23e768e55877a4"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "national_security_diligence/data/synthetic/README.md",
+      "size_bytes": 270,
+      "sha256": "13165d50c6d9580608561ae747e13024ef29b96dc9d0e2f01f54a035b005f3dc"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "national_security_diligence/data/synthetic/a2_outbound_targets.csv",
+      "size_bytes": 892,
+      "sha256": "89b0fc7c0be168231fbfdb84f1d565933f20789c687a4ba7e49a80491a3159c8"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "national_security_diligence/data/synthetic/c1_data_assets.csv",
+      "size_bytes": 596,
+      "sha256": "0b0df46b5e5479f9b70dfe64078705bd63570901b0da752740b181f28d863bc9"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "national_security_diligence/data/synthetic/d1_deal_intake_flags.csv",
+      "size_bytes": 941,
+      "sha256": "4f8d77e3f43dcfbc99e02beb65d7867344d21f5d0d3ad2a0c78ae610d7ca559b"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "national_security_diligence/data/synthetic/d2_counterparties.csv",
+      "size_bytes": 287,
+      "sha256": "ec8f7019387e15aada541a8a3d6a700b05fccf5aeb63f11f8e3e87cc8677ca8c"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "national_security_diligence/data/synthetic/d2_ownership_edges.csv",
+      "size_bytes": 397,
+      "sha256": "5613673ae31e6493867c9d985ac526252e894a82bfe3c9a920b848531bb0a8b9"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "national_security_diligence/docs/data_sources.md",
+      "size_bytes": 8387,
+      "sha256": "b73fd973be3f83d9f690716adbc3a94c2798b7426abd336fe41fa52c7787de16"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "national_security_diligence/docs/dependency_review.md",
+      "size_bytes": 2303,
+      "sha256": "7e81a5dc6bf983386eb9eed6c0d375e59064443277714c6fde8b0008fb6d84af"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "national_security_diligence/docs/limitations.md",
+      "size_bytes": 4024,
+      "sha256": "a96a12a5703fdfebd791c3eaf37ac2ebc4d572dbb4f71a6d49a3aaa480b7ef1c"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "national_security_diligence/docs/update_log.md",
+      "size_bytes": 1664,
+      "sha256": "f85aafdf442808040773b7c1cb9d3d9b0071e85f47f3a4e1623fffbacc264598"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "national_security_diligence/notebooks/.gitkeep",
+      "size_bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "national_security_diligence/notebooks/A1_cfius_public_actions.ipynb",
+      "size_bytes": 2150,
+      "sha256": "975bbacdea73b141259a14a3fb5a8c57fed335ffc4e16e84be1b15e6471967c4"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "national_security_diligence/notebooks/A1_cfius_public_actions.py",
+      "size_bytes": 521,
+      "sha256": "bee2165ec0f81e53674e2000015d62dedf0bbc5c410b9799afab77ce7ac88487"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "national_security_diligence/notebooks/A2_outbound_triage.ipynb",
+      "size_bytes": 2124,
+      "sha256": "6d6ee8767ab802a99f6d5482669d9f470200770b76da2b27726334c70e9316b3"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "national_security_diligence/notebooks/A2_outbound_triage.py",
+      "size_bytes": 513,
+      "sha256": "4b5b5131c10a3e0279cb2a72a6968ce702fdf5814d078cba83f53b4f5eb852fb"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "national_security_diligence/notebooks/C1_data_threshold_checker.ipynb",
+      "size_bytes": 2149,
+      "sha256": "b69d036eaa83f988d5fafb8adc4baf85d74cabaf5e3f06cd8164c8807eeec912"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "national_security_diligence/notebooks/C1_data_threshold_checker.py",
+      "size_bytes": 514,
+      "sha256": "d378481ffd22c71f97005edda469455ba21a423eea44857663c2614c6636ef73"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "national_security_diligence/notebooks/C2_forfeiture_timeline_builder.ipynb",
+      "size_bytes": 2151,
+      "sha256": "2b23e1e18d7fb14403a89bdead6b46983d3c1f3ca9fc638feb93d4c57a03d108"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "national_security_diligence/notebooks/C2_forfeiture_timeline_builder.py",
+      "size_bytes": 523,
+      "sha256": "559715c3a557389c8fcf9a604952bd5ee9757e1b9f912341d3ac1dc296d7cb51"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "national_security_diligence/notebooks/C3_bounty_program_matrix.ipynb",
+      "size_bytes": 2099,
+      "sha256": "fd5777aa8437d34eceee2be013e6a8f4be8cc6e70cf302aafd77c73f984dc06a"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "national_security_diligence/notebooks/C3_bounty_program_matrix.py",
+      "size_bytes": 512,
+      "sha256": "1d02165863174a4957b710cf19b2c304e80c08ef57f8657d0df783fb1e52a702"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "national_security_diligence/notebooks/D1_integrated_workflow.ipynb",
+      "size_bytes": 2109,
+      "sha256": "626b88bc6ee0bc1cf0166af3579ba85be2a697039e25afc2636cc9c8ce75312b"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "national_security_diligence/notebooks/D1_integrated_workflow.py",
+      "size_bytes": 516,
+      "sha256": "9a9155fd1bf85bef0e56da0b104a42bd7b9a8f3f5c61fc9feb3536a3d63dc568"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "national_security_diligence/notebooks/D2_screening_toolkit.ipynb",
+      "size_bytes": 3052,
+      "sha256": "762cb01f905010da5dfcf2bbc2c6cd88883198edbd7b2333302cf888f497c9ad"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "national_security_diligence/notebooks/D2_screening_toolkit.py",
+      "size_bytes": 1028,
+      "sha256": "ea654cde6ba9967e5d4fc2fccc0f883a942f3f9e1d253506faaf20f0d7d80c73"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "national_security_diligence/notebooks/D3_remedy_comparison_timeline.ipynb",
+      "size_bytes": 2119,
+      "sha256": "03bf201d032bb9715f73a106e12b56a27c71dfc0f9462ab8567f0b295d391f13"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "national_security_diligence/notebooks/D3_remedy_comparison_timeline.py",
+      "size_bytes": 524,
+      "sha256": "ed39e5f971c60a65aa632270eb42d857f3e6e8f119c6e85413c9f94c27dcfd06"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "national_security_diligence/ns_screen.py",
+      "size_bytes": 992,
+      "sha256": "6175f833ab53e4d1ebe303a2bb586e7faa18c0545bdc6b7c6b9143f861e1c846"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "national_security_diligence/pyproject.toml",
+      "size_bytes": 379,
+      "sha256": "cccb2333f18b189831fc0f81e3acbb251d0567b8ef40285221a9e0ca0b950fd1"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "national_security_diligence/requirements.txt",
+      "size_bytes": 317,
+      "sha256": "4dbe0056797d89442d2f379901bfccd043f9dbb45b46ba02eff44314d896fcf5"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "national_security_diligence/src/ns_diligence/__init__.py",
+      "size_bytes": 286,
+      "sha256": "27a0b97105c148e8ac632f36fe700d000b6c00aad431eb4b59e09b1938966d3d"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "national_security_diligence/src/ns_diligence/award_matrix.py",
+      "size_bytes": 4121,
+      "sha256": "7c6df3020f6fd1565095db416280ac3eeccf0c2528987e395541ccb72026c02b"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "national_security_diligence/src/ns_diligence/cfius_reports.py",
+      "size_bytes": 7955,
+      "sha256": "9391a4e9c412a165c7e1984046770149f9550d8de76f657d1e07c00da44dd9c2"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "national_security_diligence/src/ns_diligence/data_threshold_checker.py",
+      "size_bytes": 4969,
+      "sha256": "69f3d4522b821a2239b281489d02099e95419ae13aa273b9a7af85ca08595af8"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "national_security_diligence/src/ns_diligence/export_list_screen.py",
+      "size_bytes": 1637,
+      "sha256": "d2b80a8c2cfbdf48ad82d70c5622ad862dc05c445d54a0549428b3e664fb41e2"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "national_security_diligence/src/ns_diligence/fetch_csl.py",
+      "size_bytes": 3705,
+      "sha256": "c962ba72645b642d92e27118bb861d7358af439f3da00bf710f4177397c929f2"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "national_security_diligence/src/ns_diligence/fetch_ofac.py",
+      "size_bytes": 4524,
+      "sha256": "1ad7ef88a8287b6fdb70e3b262b69cae5a1042d43e947ce9fd19d5759d4d0717"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "national_security_diligence/src/ns_diligence/outbound_triage.py",
+      "size_bytes": 5203,
+      "sha256": "7f84f5b2bc68b6e5dc0a5d88d3a45965079f121e6ddca09300ff58ef9e1a0fc8"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "national_security_diligence/src/ns_diligence/ownership_graph.py",
+      "size_bytes": 2899,
+      "sha256": "42410095a51f0b1ff1387cad2f4849694d52331fdb390dd2cddcdced3053d36d"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "national_security_diligence/src/ns_diligence/remedy_comparison.py",
+      "size_bytes": 3871,
+      "sha256": "8e13dc40fd20ca77d0355b9e9246df0de646f1eb637172b464ef37fc75891678"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "national_security_diligence/src/ns_diligence/risk_workflow.py",
+      "size_bytes": 7133,
+      "sha256": "5cb12bdd39706d00c28614d192d901026e8f504427cf81ef29b4a02d59dcbd33"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "national_security_diligence/src/ns_diligence/screen_names.py",
+      "size_bytes": 3771,
+      "sha256": "f1afba0a5c65d2e4878d11430c6ef5ac4d8f8afd0df0d9cc248a407f0a54c3b1"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "national_security_diligence/src/ns_diligence/timeline_builder.py",
+      "size_bytes": 5828,
+      "sha256": "214e842dad8902e96435da688f37cb7ed206cdef7c39c8679e52815a46db9907"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "national_security_diligence/tests/.gitkeep",
+      "size_bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "national_security_diligence/tests/test_award_matrix.py",
+      "size_bytes": 1878,
+      "sha256": "814acb27919e394fc59faa89c9b15a2613302fdc3c1879fb90f11f90dc957f48"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "national_security_diligence/tests/test_cfius_reports.py",
+      "size_bytes": 3155,
+      "sha256": "278ff04325d48d19143bce6443c124112ba9c9170dcc989bc0c00ad63ce0bf23"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "national_security_diligence/tests/test_data_threshold_checker.py",
+      "size_bytes": 2113,
+      "sha256": "baabc0032bc94cc3a9c3f980aadc75ba45069e154760e171cb6293edd1fb14af"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "national_security_diligence/tests/test_live_sources.py",
+      "size_bytes": 4299,
+      "sha256": "9db1004629086de892f37ad81d4621b3ab952356a311f2e2ae3350439fadf90f"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "national_security_diligence/tests/test_outbound_triage.py",
+      "size_bytes": 3070,
+      "sha256": "608a49e29f22571eef9f9deb2a37c3465cd5040b0574ba730c60dd95106f411c"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "national_security_diligence/tests/test_remedy_comparison.py",
+      "size_bytes": 1364,
+      "sha256": "6a1e915e6205caf20b121f4e4e225d372caed18c9c5b51a84fc076db0f7393cd"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "national_security_diligence/tests/test_risk_workflow.py",
+      "size_bytes": 2582,
+      "sha256": "6caf3263efab107b5a46f1471736de40674d2deb327fdbf5dfa5871fa61e4251"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "national_security_diligence/tests/test_screening_toolkit.py",
+      "size_bytes": 3539,
+      "sha256": "c2d138429dc8d62c41d1a156742f87c9f682c15cda5f5f4dc73b8c342bbf4065"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "national_security_diligence/tests/test_timeline_builder.py",
+      "size_bytes": 1818,
+      "sha256": "ac63624211cccec33de646ed6716836f57cd77a1e586d756155bb5bcda8e5d0a"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "output/DD_TECH_LAB_INVENTORY_2026-06-16.csv",
+      "size_bytes": 17768,
+      "sha256": "991a9a40a811f2153668d6d2f9a9256d61fdbaa666a615f5f8ee1990fdb33fc1"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "output/SITE_POINTER_FIX.md",
+      "size_bytes": 1006,
+      "sha256": "163f141e38ba55d8db168394bf0ef7e0bbf5cfb632daa8d824b25d741e5fb74f"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "output/notebook_review/REVIEW_LOG.md",
+      "size_bytes": 2880,
+      "sha256": "57d7552e5ec855003f90393d56a777b6d9dbc4a98ca5dc4d3ed776e7f80f8f63"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "output/notebook_review/review_results.json",
+      "size_bytes": 16545,
+      "sha256": "ae69d4c4a32ce2d3fec9f63c34d36debc90fcace4e8fd96493c9df5ef455b171"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "output/notebook_review/screenshots/forensic_numeric_techniques__beyond-benford-fraud-detection-techniques.ipynb_desktop.png",
+      "size_bytes": 2483898,
+      "sha256": "16fb7bdc701785ef2d7e9f04893e9a422aae6356e219c0d50b1b63aec861d5fd"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "output/notebook_review/screenshots/forensic_numeric_techniques__beyond-benford-fraud-detection-techniques.ipynb_mobile.png",
+      "size_bytes": 1893279,
+      "sha256": "b2ed6cf09a63772a020278cd788e35c0c942aef49cc4ce2419fbcf21f81fe575"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "output/notebook_review/screenshots/forensic_numeric_techniques__beyond-benford-fraud-detection-techniques.ipynb_tablet.png",
+      "size_bytes": 2461396,
+      "sha256": "878a33c5a5b68cde9abf30031b5850139d050c5e47eb00d8ffe30b0335496e73"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "output/notebook_review/screenshots/medicaid_public_data_screening__screening-a-states-medicaid-market-with-public-data.ipynb_desktop.png",
+      "size_bytes": 1482920,
+      "sha256": "603f366d108bd862157ba87ef2625ccb13df5f4358588bcb6f5ace185ba9831e"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "output/notebook_review/screenshots/medicaid_public_data_screening__screening-a-states-medicaid-market-with-public-data.ipynb_mobile.png",
+      "size_bytes": 1130656,
+      "sha256": "f03cc9b26678f524f5578339f305ef65bff7d46babd09f20995b62960468a07a"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "output/notebook_review/screenshots/medicaid_public_data_screening__screening-a-states-medicaid-market-with-public-data.ipynb_tablet.png",
+      "size_bytes": 1475532,
+      "sha256": "557771dbb16cf47728c6d637e11f74433433563d6acc4cb3a93bfc4c4b7dcba1"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "output/notebook_review/screenshots/medicare_outlier_screen__medicare_outlier_screen.ipynb_desktop.png",
+      "size_bytes": 122183,
+      "sha256": "45bbdc163c9261f24ef955ed3bcfbdc2f43de42852f7179684052fd73a783083"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "output/notebook_review/screenshots/medicare_outlier_screen__medicare_outlier_screen.ipynb_mobile.png",
+      "size_bytes": 102252,
+      "sha256": "3a0613f23d7b1e2c019a2f895289dbbd034083703a239aeb4440b0f02d858514"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "output/notebook_review/screenshots/medicare_outlier_screen__medicare_outlier_screen.ipynb_tablet.png",
+      "size_bytes": 118916,
+      "sha256": "85b800464e429c946e639030f832f6a3ce46f832280fd1a5fce9b68fbfcf4c05"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "output/notebook_review/screenshots/national_security_diligence__notebooks__A1_cfius_public_actions.ipynb_desktop.png",
+      "size_bytes": 108808,
+      "sha256": "1cdea8b22b93f3572eb8e435486a8fac18704974f10b4532f0bb56f64fbb6c7a"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "output/notebook_review/screenshots/national_security_diligence__notebooks__A1_cfius_public_actions.ipynb_mobile.png",
+      "size_bytes": 76591,
+      "sha256": "d3a8231b2b6f79595dc7824aa9fe3906b1db6f5175ba9cce25e825ddd2dc0559"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "output/notebook_review/screenshots/national_security_diligence__notebooks__A1_cfius_public_actions.ipynb_tablet.png",
+      "size_bytes": 101247,
+      "sha256": "beefb4f208225abe66a42c995f72056b7cbca357f25686dfe7c7772a9a23b095"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "output/notebook_review/screenshots/national_security_diligence__notebooks__A2_outbound_triage.ipynb_desktop.png",
+      "size_bytes": 105789,
+      "sha256": "b541e44fff37b661c5515b3de52171fe87eb0952adc85e4153edb70ecbf1d411"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "output/notebook_review/screenshots/national_security_diligence__notebooks__A2_outbound_triage.ipynb_mobile.png",
+      "size_bytes": 72129,
+      "sha256": "abf73f7b7ad311ff5f0b55908c67fa8ea04d13119deeb44cc599e14b1b538505"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "output/notebook_review/screenshots/national_security_diligence__notebooks__A2_outbound_triage.ipynb_tablet.png",
+      "size_bytes": 97309,
+      "sha256": "a4052a73ab29a45b0cc812a0ea50b473263a49b7b11ef8b0975d4a542dc0c108"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "output/notebook_review/screenshots/national_security_diligence__notebooks__C1_data_threshold_checker.ipynb_desktop.png",
+      "size_bytes": 106162,
+      "sha256": "4975b4da3f1857b18de621753db614c137d6caebfeb4399863362fc060a4025e"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "output/notebook_review/screenshots/national_security_diligence__notebooks__C1_data_threshold_checker.ipynb_mobile.png",
+      "size_bytes": 75139,
+      "sha256": "ea7f9cf7f848a60897c00c414d50ea5c7435158c6b051b48495cce709dadb680"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "output/notebook_review/screenshots/national_security_diligence__notebooks__C1_data_threshold_checker.ipynb_tablet.png",
+      "size_bytes": 98633,
+      "sha256": "5468d923da3889c086d595304c5957b6c791822ed32a5e37fb5b0b86530d4fc2"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "output/notebook_review/screenshots/national_security_diligence__notebooks__C2_forfeiture_timeline_builder.ipynb_desktop.png",
+      "size_bytes": 107625,
+      "sha256": "9564f6e2db1b0bd39460ca90a734ce08f284214a4ceab2fa1cf05f4328542385"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "output/notebook_review/screenshots/national_security_diligence__notebooks__C2_forfeiture_timeline_builder.ipynb_mobile.png",
+      "size_bytes": 74784,
+      "sha256": "b0e7fdbf618826290d0343001c7b240e5fec33490491ba54c40cf5e94c97b06d"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "output/notebook_review/screenshots/national_security_diligence__notebooks__C2_forfeiture_timeline_builder.ipynb_tablet.png",
+      "size_bytes": 99511,
+      "sha256": "2ec15ad578b44ab9ee12e154c0495361e6dcb2f30c7bbb7b303a31a4d18325ec"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "output/notebook_review/screenshots/national_security_diligence__notebooks__C3_bounty_program_matrix.ipynb_desktop.png",
+      "size_bytes": 106002,
+      "sha256": "02b0e05aa7a21346f7adff317c8e8cde99d48d0b4cdd97930e55448d3cfd500b"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "output/notebook_review/screenshots/national_security_diligence__notebooks__C3_bounty_program_matrix.ipynb_mobile.png",
+      "size_bytes": 71090,
+      "sha256": "9c268f6976bf7d73bea888ccaab93d43f8cddbff42b81418ce2a9cef84133b7d"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "output/notebook_review/screenshots/national_security_diligence__notebooks__C3_bounty_program_matrix.ipynb_tablet.png",
+      "size_bytes": 97655,
+      "sha256": "4a21d86e74a2aaf893d19cec2ea0ac88f960f38e58e40391b255e13c35b7e6ca"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "output/notebook_review/screenshots/national_security_diligence__notebooks__D1_integrated_workflow.ipynb_desktop.png",
+      "size_bytes": 105977,
+      "sha256": "a162572a244e6c857f1637914713e785bef3d9f12f40b01e9f2a8cb127bc2193"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "output/notebook_review/screenshots/national_security_diligence__notebooks__D1_integrated_workflow.ipynb_mobile.png",
+      "size_bytes": 71887,
+      "sha256": "1b39b0f1331546d69f72035253c2b53aa653f7ebb12b9e4bc7d528bf5991712a"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "output/notebook_review/screenshots/national_security_diligence__notebooks__D1_integrated_workflow.ipynb_tablet.png",
+      "size_bytes": 97497,
+      "sha256": "e50a998c8804916b6656fcd2eefcecad4de3458b2c8ff0d9ff4b837db91da513"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "output/notebook_review/screenshots/national_security_diligence__notebooks__D2_screening_toolkit.ipynb_desktop.png",
+      "size_bytes": 165784,
+      "sha256": "fb43a72c72d015463816ea3ab60be3cf47365d839bffe6ec7b049eca4d844ade"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "output/notebook_review/screenshots/national_security_diligence__notebooks__D2_screening_toolkit.ipynb_mobile.png",
+      "size_bytes": 111318,
+      "sha256": "256a9a154ad535e133e47cc07f668d3f37e951f3878c7fdd4f73201346b2e75f"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "output/notebook_review/screenshots/national_security_diligence__notebooks__D2_screening_toolkit.ipynb_tablet.png",
+      "size_bytes": 150526,
+      "sha256": "460bdb80a9fbfbe180ef8c003afa661f787e3533de976e3f82fac7d0bb7c51b0"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "output/notebook_review/screenshots/national_security_diligence__notebooks__D3_remedy_comparison_timeline.ipynb_desktop.png",
+      "size_bytes": 107946,
+      "sha256": "20b71b55ddbb6b6a5e8e4abe17db608c829613bf8bcddf080e99852100d39e4a"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "output/notebook_review/screenshots/national_security_diligence__notebooks__D3_remedy_comparison_timeline.ipynb_mobile.png",
+      "size_bytes": 74169,
+      "sha256": "168d2cd1a434687c0b8798bcb394f60e8404ddad546bbdb01a1d8d2d5447decd"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "output/notebook_review/screenshots/national_security_diligence__notebooks__D3_remedy_comparison_timeline.ipynb_tablet.png",
+      "size_bytes": 99976,
+      "sha256": "6e5be4786466218291acb35011111bbbf812a496ded9b9d75535c69dc5b18829"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "output/notebook_review/screenshots/stochastic_markov__001_markov_intro.ipynb_desktop.png",
+      "size_bytes": 143266,
+      "sha256": "f4c292409a03a6f265879a0e18b2c501473a76cc3be3d0187a78c3ad4ca8485b"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "output/notebook_review/screenshots/stochastic_markov__001_markov_intro.ipynb_mobile.png",
+      "size_bytes": 114956,
+      "sha256": "81a5452d55c02f47a827af2e4ad35159cdf529eedce341f3bb42d0db46920b69"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "output/notebook_review/screenshots/stochastic_markov__001_markov_intro.ipynb_tablet.png",
+      "size_bytes": 137931,
+      "sha256": "cb98ed97ec8d55fdfe81a5d6ca2adbaca99298cd246c0d811e5db286e83bfcc9"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "output/notebook_review/screenshots/stochastic_markov__002_journal_entry_production.ipynb_desktop.png",
+      "size_bytes": 125453,
+      "sha256": "61fc3eddae7f11950063dcb63453800a57fd4bbcd1984376cf9ffb481d7cc7d8"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "output/notebook_review/screenshots/stochastic_markov__002_journal_entry_production.ipynb_mobile.png",
+      "size_bytes": 99431,
+      "sha256": "a08b8c707497b2750b627331b6910a49349b73bfaba3c1e00cc3733eb7ae899e"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "output/notebook_review/screenshots/stochastic_markov__002_journal_entry_production.ipynb_tablet.png",
+      "size_bytes": 120895,
+      "sha256": "fb0c85010fa07dddb832f41617996541abdacd7ca0421a853a802a5746696024"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "output/notebook_review/screenshots/stochastic_markov__003_hidden_markov_earnings_management.ipynb_desktop.png",
+      "size_bytes": 239332,
+      "sha256": "9189cbdb8115180e7519dd5aef59aa47a059e98a40556120e985858cadc360da"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "output/notebook_review/screenshots/stochastic_markov__003_hidden_markov_earnings_management.ipynb_mobile.png",
+      "size_bytes": 221400,
+      "sha256": "c67920be4ec152a4d59304e4fca4641bfd4c283c79b1a8c740683964453c893c"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "output/notebook_review/screenshots/stochastic_markov__003_hidden_markov_earnings_management.ipynb_tablet.png",
+      "size_bytes": 237616,
+      "sha256": "5ee4072c448c90c9caec12eec7fbf6cecc3400e9f63b22894442419bc8d734e0"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "output/notebook_review/screenshots/stochastic_markov__004_mixture_round_tripping.ipynb_desktop.png",
+      "size_bytes": 94501,
+      "sha256": "4d21f92bb3a63fd084101bbb57af9f6a1c924629696a86f784c304fad9684128"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "output/notebook_review/screenshots/stochastic_markov__004_mixture_round_tripping.ipynb_mobile.png",
+      "size_bytes": 69980,
+      "sha256": "a15a172c196775c5df41844b323cec717fbfb97c1a407290f567fd67537b2757"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "output/notebook_review/screenshots/stochastic_markov__004_mixture_round_tripping.ipynb_tablet.png",
+      "size_bytes": 91333,
+      "sha256": "d7d4cbf0b627933604161b97ff1f011988e5ca544b5946eba77f042848094aa3"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "output/notebook_review/screenshots/stochastic_markov__005_random_walk_stationarity.ipynb_desktop.png",
+      "size_bytes": 127552,
+      "sha256": "5acd953792e214db5db1661bb20138bae265c207a6828cbfcfbb8b9543e0f155"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "output/notebook_review/screenshots/stochastic_markov__005_random_walk_stationarity.ipynb_mobile.png",
+      "size_bytes": 99976,
+      "sha256": "848b7bee97e4bcb167863264a9655b6a61a87c67752650831b46b72b585526c1"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "output/notebook_review/screenshots/stochastic_markov__005_random_walk_stationarity.ipynb_tablet.png",
+      "size_bytes": 121687,
+      "sha256": "8b67d9f38bf24d7042f0ea0b998bc0f7e59998323d0af1a980b0735001d9ad7c"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "output/notebook_review/screenshots/stochastic_markov__006_markov_decision_audit_sampling.ipynb_desktop.png",
+      "size_bytes": 102274,
+      "sha256": "67f71662198f1abbec3fa76942f88e53491d2f2a634045d49f634a530cc8b8cc"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "output/notebook_review/screenshots/stochastic_markov__006_markov_decision_audit_sampling.ipynb_mobile.png",
+      "size_bytes": 73456,
+      "sha256": "045bf238bcaa322bf47b1bab0004e5ea5e4825a549153e46d4f07d8fe71276bc"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "output/notebook_review/screenshots/stochastic_markov__006_markov_decision_audit_sampling.ipynb_tablet.png",
+      "size_bytes": 97961,
+      "sha256": "824c6823506e182d7f4a764777999a76b0e25e8cc6268589dd51f7caef1d06ca"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "output/notebook_review/screenshots/stochastic_markov__007_garch_restatement_timing.ipynb_desktop.png",
+      "size_bytes": 214374,
+      "sha256": "913a95fecefb433a8ba4f81722b9390ee0c4407a909f834267d553b0813df2c0"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "output/notebook_review/screenshots/stochastic_markov__007_garch_restatement_timing.ipynb_mobile.png",
+      "size_bytes": 174810,
+      "sha256": "006d0f1a5e24e54ead4590e0a988ce01c18c5c294286d7cfd08acf3b32cbb692"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "output/notebook_review/screenshots/stochastic_markov__007_garch_restatement_timing.ipynb_tablet.png",
+      "size_bytes": 205879,
+      "sha256": "b56e52eca4e5287a717c5689a99b89e89734493b8b76ff580774a0569e7ed9ac"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "output/notebook_review/screenshots/stochastic_markov__008_two_stage_screen.ipynb_desktop.png",
+      "size_bytes": 94870,
+      "sha256": "59cc3b3eb13da35dda2905404eada260cd190fa3ca1baf4330cc7dc41c40224e"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "output/notebook_review/screenshots/stochastic_markov__008_two_stage_screen.ipynb_mobile.png",
+      "size_bytes": 68676,
+      "sha256": "e61b2071375e0575071a3b97e86981ccd8cac5313c724bb304eb86fb86419d9e"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "output/notebook_review/screenshots/stochastic_markov__008_two_stage_screen.ipynb_tablet.png",
+      "size_bytes": 91714,
+      "sha256": "55f9f370c29f6934a380c85ad20f34e8fcf61064a5caa635fa90fa056f09e8e9"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "output/notebook_review/screenshots/stochastic_markov__009_higher_order_variable_order_markov.ipynb_desktop.png",
+      "size_bytes": 153099,
+      "sha256": "80a8bc818a501aac0d751fb0699d2f92949ea6a6d818d6c998fa92342d78beb9"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "output/notebook_review/screenshots/stochastic_markov__009_higher_order_variable_order_markov.ipynb_mobile.png",
+      "size_bytes": 124671,
+      "sha256": "1f34c5f792d9fc87e4f1a2032970f4cd6446c35b7b4dde6ec2ec7422a5e7c747"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "output/notebook_review/screenshots/stochastic_markov__009_higher_order_variable_order_markov.ipynb_tablet.png",
+      "size_bytes": 150971,
+      "sha256": "44d77c39d398b9a093dbadfa7b51a90bcf5964eea3a40b58318b755ade097bf9"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "output/notebook_review/screenshots/stochastic_markov__010_continuous_time_markov.ipynb_desktop.png",
+      "size_bytes": 121415,
+      "sha256": "dfed0d03976a4f50d5f9d9a367c5b6322a28f658ccfffe517cf0b58edf93a395"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "output/notebook_review/screenshots/stochastic_markov__010_continuous_time_markov.ipynb_mobile.png",
+      "size_bytes": 91435,
+      "sha256": "ab831c9ec9c28caca44b146e649c5f5da37d174b61e500a93405999e3260f633"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "output/notebook_review/screenshots/stochastic_markov__010_continuous_time_markov.ipynb_tablet.png",
+      "size_bytes": 116655,
+      "sha256": "59a790c62d9935f6bf753e5b2520c002bf38034b1f08ebbdb4d691ef89281cb8"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "stochastic_markov/001_markov_intro.ipynb",
+      "size_bytes": 1638,
+      "sha256": "3662363adca2954cd4a4b90521b3f0675068a6f7599c487606721140953dff10"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "stochastic_markov/002_journal_entry_production.ipynb",
+      "size_bytes": 1662,
+      "sha256": "da6064b9eb7ba3d02cc39d756b5917700fc522358899cc918bc74b6a1212b0d8"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "stochastic_markov/003_hidden_markov_earnings_management.ipynb",
+      "size_bytes": 1680,
+      "sha256": "02543a82d69716d73d120278b71f439c8e0d8f6f510558c4bc86be96b0735efc"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "stochastic_markov/003_hidden_markov_earnings_management.py",
+      "size_bytes": 6413,
+      "sha256": "5c6afcb4cafdb975c7ad8345cd4d1a860a23141c85973ab2ebbffb86aab5bd81"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "stochastic_markov/004_mixture_round_tripping.ipynb",
+      "size_bytes": 1658,
+      "sha256": "e9797080058a3b57582d59e837340fc96d46faf748aae182714f32cdc2d2a9fe"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "stochastic_markov/005_random_walk_stationarity.ipynb",
+      "size_bytes": 1662,
+      "sha256": "fbaa6a3ac15b86512d7f205407d9b56c93b967fd0a3da14858b6f00b2223adc4"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "stochastic_markov/005_random_walk_stationarity.py",
+      "size_bytes": 5915,
+      "sha256": "bc8b47e753f14581345244ec8b9b528fc3aa4856181469d899f276babc6f16ed"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "stochastic_markov/006_markov_decision_audit_sampling.ipynb",
+      "size_bytes": 1674,
+      "sha256": "0f611eca91a2c562039cf1614451a54ddf1ca2a39baf87efc84b9e960a0c3f9a"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "stochastic_markov/007_garch_restatement_timing.ipynb",
+      "size_bytes": 1662,
+      "sha256": "0d478defc52666939940a9e1478e6779f2512083920f47d8fd20c75ba172bec5"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "stochastic_markov/008_two_stage_screen.ipynb",
+      "size_bytes": 1646,
+      "sha256": "47cc9316191d6f61997743f7317c013787bf29c173cb8acd3551b800aed1a5fe"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "stochastic_markov/009_higher_order_variable_order_markov.ipynb",
+      "size_bytes": 1682,
+      "sha256": "9316a28cc51f7986c1ae8cd005d0258c4ada486bf3634b0fd939d4004eadcd47"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "stochastic_markov/010_continuous_time_markov.ipynb",
+      "size_bytes": 1658,
+      "sha256": "cf92be7b711ba62e28e325787d4c0c5c83ed64f1b606468a5fc7540b7ff0f818"
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "tools/check_duality.py",
+      "size_bytes": 1492,
+      "sha256": "f65782204259a3c5529c9c035d3f034e1c27e831cd63b664476ebc6032e43627"
+    },
+    {
+      "surface": "NGO article source",
+      "status": "M",
+      "path": "SPP/articles/2026-06-14_national_security_diligence_stack/article_A1_cfius_inbound_screen.md",
+      "size_bytes": 54531,
+      "sha256": "6d41dd20a25f300f8828db290021c912fa3fd1b3a6120bf7e8e32829be861724"
+    },
+    {
+      "surface": "NGO article source",
+      "status": "M",
+      "path": "SPP/articles/2026-06-14_national_security_diligence_stack/article_A2_outbound_reverse_cfius.md",
+      "size_bytes": 48028,
+      "sha256": "64f2e76bd98726212eb7f2408b907ded63ddf0d5e3a10651fb9f85b0619ea12f"
+    },
+    {
+      "surface": "NGO article source",
+      "status": "M",
+      "path": "SPP/articles/2026-06-14_national_security_diligence_stack/article_D1_integrated_diligence_workflow.md",
+      "size_bytes": 67527,
+      "sha256": "35a922e561b79dbaee0a6cb474f5ab3b6bb9032e8251174c68b80df20dab9bbc"
+    },
+    {
+      "surface": "NGO article source",
+      "status": "M",
+      "path": "SPP/articles/2026-06-14_national_security_diligence_stack/article_D2_screening_toolkit_code.md",
+      "size_bytes": 63308,
+      "sha256": "00083c854fc4d5f8852d1754fbaebf1e28f9b04b61949010a52a2c671c76203d"
+    },
+    {
+      "surface": "NGO article source",
+      "status": "M",
+      "path": "SPP/articles/2026-06-14_national_security_diligence_stack/article_D3_divestiture_vs_forfeiture_anatomy.md",
+      "size_bytes": 48068,
+      "sha256": "a93ef689b825a555189bf47dd2cc5d85b571780bd46b496c4807bfe8a33c4c39"
+    },
+    {
+      "surface": "NGO article source",
+      "status": "M",
+      "path": "SPP/articles/2026-06-14_national_security_diligence_stack/pillar_national_security_diligence_stack.md",
+      "size_bytes": 30416,
+      "sha256": "91eb8c4afa3cb199d86b3c9fbaa0985e69db30eeb263cdc58a6b8e7928512e0d"
+    }
+  ],
+  "changed_links": [
+    {
+      "article": "article_A1_cfius_inbound_screen.md",
+      "change": "Applied DD Lab link now points to canonical DD Tech Lab child folder.",
+      "new_target": "https://github.com/Sheepdog-Prosperity-Partners-LLC/dd-tech-lab-companions/tree/main/national_security_diligence"
+    },
+    {
+      "article": "article_A2_outbound_reverse_cfius.md",
+      "change": "Applied DD Lab link now points to canonical DD Tech Lab child folder and wording changed from sorting hat to sorting aid.",
+      "new_target": "https://github.com/Sheepdog-Prosperity-Partners-LLC/dd-tech-lab-companions/tree/main/national_security_diligence"
+    },
+    {
+      "article": "pillar_national_security_diligence_stack.md",
+      "change": "Companion lab routing changed from local series folder path to canonical repo child folder.",
+      "new_target": "https://github.com/Sheepdog-Prosperity-Partners-LLC/dd-tech-lab-companions/tree/main/national_security_diligence"
+    },
+    {
+      "article": "article_D1_integrated_diligence_workflow.md",
+      "change": "Selected-source lab pointer changed from local series folder path to canonical repo child wrapper.",
+      "new_target": "dd-tech-lab-companions/national_security_diligence/notebooks/D1_integrated_workflow.py"
+    },
+    {
+      "article": "article_D2_screening_toolkit_code.md",
+      "change": "Repository description, folder tree, run path, and selected-source pointers changed from standalone local lab to canonical repo child folder.",
+      "new_target": "https://github.com/Sheepdog-Prosperity-Partners-LLC/dd-tech-lab-companions/tree/main/national_security_diligence"
+    },
+    {
+      "article": "article_D3_divestiture_vs_forfeiture_anatomy.md",
+      "change": "Selected-source lab pointer changed from local series folder module to canonical repo child wrapper.",
+      "new_target": "dd-tech-lab-companions/national_security_diligence/notebooks/D3_remedy_comparison_timeline.py"
+    }
+  ]
+}
