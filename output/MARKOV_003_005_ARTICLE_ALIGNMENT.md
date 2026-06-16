@@ -25,6 +25,8 @@ Commands:
 
 ## 003 Hidden Markov Earnings Management
 
+Method note: the companion was corrected before this alignment. The original detector accepted any firm whose two-state HMM beat a single-Gaussian null on the likelihood-ratio gate, but a two-state HMM carries enough extra parameters to clear that gate on pure noise, so every clean firm was admitted and roughly half of each clean firm's quarters were flagged. The corrected detector adds a regime-separation gate (the two fitted state means must differ along the manipulation direction by a minimum margin) and flags a quarter only when the posterior probability of the manipulated state clears 0.90. If the article describes the method, it should now read: fit a two-regime Gaussian HMM per firm, screen with both a likelihood-ratio gate and a regime-separation gate, then flag quarters by Viterbi state confirmed by a posterior threshold.
+
 Old output line:
 
 ```text
@@ -34,7 +36,7 @@ Viterbi-decoded manipulation periods: precision=0.433, recall=0.625 (TP=60, FP=7
 New output line:
 
 ```text
-Viterbi-decoded manipulation periods: precision=0.048, recall=0.958 (TP=92, FP=1814, FN=4)
+Manipulation flags (regime-separation gate, posterior >= 0.90): precision=0.379, recall=0.958 (TP=92, FP=151, FN=4)
 ```
 
 Old target:
@@ -48,7 +50,7 @@ This performance, precision 0.433, recall 0.625
 Replacement prose:
 
 ```text
-This run produces precision 0.048 and recall 0.958 on the synthetic panel. The result is a high-sensitivity triage signal with many false positives, not a claim of field accuracy. It is useful as a workflow demonstration: the audit team can rank periods for review by posterior probability, then tune the review threshold to the engagement's cost tolerance. The caveat remains that synthetic-panel performance demonstrates workflow shape only; field accuracy depends on the entity's actual manipulation patterns and feature-engineering choices.
+This run produces precision 0.379 and recall 0.958 on the synthetic panel. The detector is tuned as a high-recall triage screen: it catches almost every truly manipulated quarter (recall 0.958) at the cost of a larger review pile (about three flags for every two that are noise). That is the right posture for a first-pass screen, where the cost of missing a manipulated period is higher than the cost of a second look. The regime-separation gate is what makes the number meaningful; without it, a two-state model fit to clean data clears the likelihood-ratio gate and floods the result with false positives. Synthetic-panel performance demonstrates workflow shape only; field accuracy depends on the entity's actual manipulation patterns and feature-engineering choices, and the audit team can move the posterior threshold to trade recall against precision for the engagement's cost tolerance.
 ```
 
 ## 005 Random-Walk and Stationarity Tests

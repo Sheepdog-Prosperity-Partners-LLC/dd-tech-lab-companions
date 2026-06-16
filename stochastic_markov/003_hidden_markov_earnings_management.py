@@ -6,8 +6,14 @@ public-company panel data.
 
 The script uses one independent random generator per firm so adding or removing
 firms does not perturb the data for unchanged firms. It fits a two-regime
-Gaussian HMM per firm, applies a likelihood-ratio gate against a single-Gaussian
-null, standardizes the manipulated state label, and prints the detection
+Gaussian HMM per firm, then screens each fitted model with two gates before any
+quarter is flagged: a likelihood-ratio gate against a single-Gaussian null, and
+a regime-separation gate that requires the two fitted state means to differ along
+the manipulation direction by a minimum margin (a two-state HMM overfits pure
+noise enough to beat the likelihood-ratio gate on its own, so the separation gate
+is what rejects clean firms). It standardizes the manipulated state label, flags
+a quarter only when Viterbi assigns the manipulated state and the posterior
+probability of that state clears a threshold, and prints the detection
 performance workpaper line.
 
 Run:
@@ -16,11 +22,17 @@ Run:
 
 from __future__ import annotations
 
+import logging
 import warnings
 
 import numpy as np
 from hmmlearn import hmm
 from scipy.stats import chi2 as chi2_dist
+
+# hmmlearn logs per-restart non-convergence notices through the logging module,
+# which warnings.filterwarnings does not suppress. Silence them so the published
+# workpaper output is the single performance line.
+logging.getLogger("hmmlearn").setLevel(logging.ERROR)
 
 
 N_FIRMS = 50
@@ -31,6 +43,16 @@ N_MANIPULATED = 8
 MU_CLEAN = np.zeros(N_FEATURES)
 MU_MANIPULATED = np.array([1.5, 1.2, 0.8, 0.5, 0.3, -0.7])
 MANIPULATION_DIRECTION = MU_MANIPULATED - MU_CLEAN
+UNIT_MANIPULATION_DIRECTION = MANIPULATION_DIRECTION / np.linalg.norm(MANIPULATION_DIRECTION)
+
+# A two-state HMM carries enough extra parameters to clear the likelihood-ratio
+# gate on pure noise, so the gate alone admits every clean firm. The separation
+# gate requires a genuine regime shift: the two fitted state means must differ
+# along the manipulation direction by at least this many units. Quarters are then
+# flagged only when the posterior probability of the manipulated state clears the
+# posterior threshold, not on raw Viterbi assignment alone.
+SEPARATION_THRESHOLD = 1.0
+POSTERIOR_THRESHOLD = 0.90
 
 
 def generate_firm_quarter_panel(
@@ -163,12 +185,32 @@ def main() -> None:
         posterior = model.predict_proba(panel[firm])
         viterbi = model.predict(panel[firm])
         viterbi, posterior = standardize_manipulated_state(model, viterbi, posterior)
+
+        separation = float(
+            np.abs(np.dot(model.means_[1] - model.means_[0], UNIT_MANIPULATION_DIRECTION))
+        )
+        if separation < SEPARATION_THRESHOLD:
+            warnings.warn(
+                f"Firm {firm}: fitted regimes separated by only {separation:.2f} along "
+                "the manipulation direction, below the separation threshold. The two-state "
+                "fit is overfitting noise rather than detecting a regime. Treating as clean.",
+                RuntimeWarning,
+            )
+            posteriors_per_firm[firm, :, :] = 0.5
+            viterbi_per_firm[firm, :] = 0
+            continue
+
         posteriors_per_firm[firm] = posterior
-        viterbi_per_firm[firm] = viterbi
+        # Flag a quarter only when Viterbi assigns the manipulated state and the
+        # posterior probability of that state clears the threshold.
+        viterbi_per_firm[firm] = (
+            (viterbi == 1) & (posterior[:, 1] >= POSTERIOR_THRESHOLD)
+        ).astype(int)
 
     results = precision_recall(viterbi_per_firm.flatten(), truth.flatten())
     print(
-        "Viterbi-decoded manipulation periods: "
+        "Manipulation flags (regime-separation gate, posterior >= "
+        f"{POSTERIOR_THRESHOLD:.2f}): "
         f"precision={results['precision']:.3f}, "
         f"recall={results['recall']:.3f} "
         f"(TP={results['tp']}, FP={results['fp']}, FN={results['fn']})"
