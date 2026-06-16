@@ -14,6 +14,7 @@ PAIR_ROOTS = [
     ROOT / "forensic_numeric_techniques",
     ROOT / "medicare_outlier_screen",
     ROOT / "national_security_diligence" / "notebooks",
+    ROOT / "cross_border_diligence_atlas" / "notebooks",
 ]
 
 

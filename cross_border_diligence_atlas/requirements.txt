@@ -1,0 +1,2 @@
+# Starter lab intentionally uses only Python standard-library modules.
+# Add dependencies only after OSS-first and non-PRC review.

@@ -292,5 +292,75 @@
       "output/notebook_review/screenshots/national_security_diligence__notebooks__D3_remedy_comparison_timeline.ipynb_mobile.png"
     ],
     "error": ""
+  },
+  {
+    "notebook": "cross_border_diligence_atlas/notebooks/AR_01_rns_entity_screen.ipynb",
+    "status": "PASS",
+    "executed_copy": "",
+    "html": "",
+    "output_cells": 5,
+    "output_items": 5,
+    "screenshots": [
+      "output/notebook_review/screenshots/cross_border_diligence_atlas__notebooks__AR_01_rns_entity_screen.ipynb_desktop.png",
+      "output/notebook_review/screenshots/cross_border_diligence_atlas__notebooks__AR_01_rns_entity_screen.ipynb_tablet.png",
+      "output/notebook_review/screenshots/cross_border_diligence_atlas__notebooks__AR_01_rns_entity_screen.ipynb_mobile.png"
+    ],
+    "error": ""
+  },
+  {
+    "notebook": "cross_border_diligence_atlas/notebooks/AR_02_boletin_timeline_builder.ipynb",
+    "status": "PASS",
+    "executed_copy": "",
+    "html": "",
+    "output_cells": 4,
+    "output_items": 4,
+    "screenshots": [
+      "output/notebook_review/screenshots/cross_border_diligence_atlas__notebooks__AR_02_boletin_timeline_builder.ipynb_desktop.png",
+      "output/notebook_review/screenshots/cross_border_diligence_atlas__notebooks__AR_02_boletin_timeline_builder.ipynb_tablet.png",
+      "output/notebook_review/screenshots/cross_border_diligence_atlas__notebooks__AR_02_boletin_timeline_builder.ipynb_mobile.png"
+    ],
+    "error": ""
+  },
+  {
+    "notebook": "cross_border_diligence_atlas/notebooks/BR_01_entity_registry_screen.ipynb",
+    "status": "PASS",
+    "executed_copy": "",
+    "html": "",
+    "output_cells": 6,
+    "output_items": 6,
+    "screenshots": [
+      "output/notebook_review/screenshots/cross_border_diligence_atlas__notebooks__BR_01_entity_registry_screen.ipynb_desktop.png",
+      "output/notebook_review/screenshots/cross_border_diligence_atlas__notebooks__BR_01_entity_registry_screen.ipynb_tablet.png",
+      "output/notebook_review/screenshots/cross_border_diligence_atlas__notebooks__BR_01_entity_registry_screen.ipynb_mobile.png"
+    ],
+    "error": ""
+  },
+  {
+    "notebook": "cross_border_diligence_atlas/notebooks/BR_02_sanctions_procurement_crosscheck.ipynb",
+    "status": "PASS",
+    "executed_copy": "",
+    "html": "",
+    "output_cells": 3,
+    "output_items": 3,
+    "screenshots": [
+      "output/notebook_review/screenshots/cross_border_diligence_atlas__notebooks__BR_02_sanctions_procurement_crosscheck.ipynb_desktop.png",
+      "output/notebook_review/screenshots/cross_border_diligence_atlas__notebooks__BR_02_sanctions_procurement_crosscheck.ipynb_tablet.png",
+      "output/notebook_review/screenshots/cross_border_diligence_atlas__notebooks__BR_02_sanctions_procurement_crosscheck.ipynb_mobile.png"
+    ],
+    "error": ""
+  },
+  {
+    "notebook": "cross_border_diligence_atlas/notebooks/US_memo_country_risk_flags.ipynb",
+    "status": "PASS",
+    "executed_copy": "",
+    "html": "",
+    "output_cells": 3,
+    "output_items": 3,
+    "screenshots": [
+      "output/notebook_review/screenshots/cross_border_diligence_atlas__notebooks__US_memo_country_risk_flags.ipynb_desktop.png",
+      "output/notebook_review/screenshots/cross_border_diligence_atlas__notebooks__US_memo_country_risk_flags.ipynb_tablet.png",
+      "output/notebook_review/screenshots/cross_border_diligence_atlas__notebooks__US_memo_country_risk_flags.ipynb_mobile.png"
+    ],
+    "error": ""
   }
 ]

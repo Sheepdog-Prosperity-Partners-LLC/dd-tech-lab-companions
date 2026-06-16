@@ -27,8 +27,12 @@ Review date: 2026-06-16.
 | `national_security_diligence/notebooks/D1_integrated_workflow.ipynb` | PASS | 1 | 3 | executed and captured |
 | `national_security_diligence/notebooks/D2_screening_toolkit.ipynb` | PASS | 3 | 3 | executed and captured |
 | `national_security_diligence/notebooks/D3_remedy_comparison_timeline.ipynb` | PASS | 1 | 3 | executed and captured |
+| `cross_border_diligence_atlas/notebooks/AR_01_rns_entity_screen.ipynb` | PASS | 5 | 3 | executed and captured |
+| `cross_border_diligence_atlas/notebooks/AR_02_boletin_timeline_builder.ipynb` | PASS | 4 | 3 | executed and captured |
+| `cross_border_diligence_atlas/notebooks/BR_01_entity_registry_screen.ipynb` | PASS | 6 | 3 | executed and captured |
+| `cross_border_diligence_atlas/notebooks/BR_02_sanctions_procurement_crosscheck.ipynb` | PASS | 3 | 3 | executed and captured |
+| `cross_border_diligence_atlas/notebooks/US_memo_country_risk_flags.ipynb` | PASS | 3 | 3 | executed and captured |
 
 ## Open Output Questions
 
-- `stochastic_markov/003_hidden_markov_earnings_management.py` executes, but the precision and recall output differs from the article draft output under the current dependency set. Hold for owner review before claiming article parity.
-- `stochastic_markov/005_random_walk_stationarity.py` executes, but the first-five-value comment in the draft does not match the current seeded output. Hold for owner review before claiming article parity.
+- Markov 003 and 005 article alignment is resolved as a WordPress edit packet at `output/MARKOV_003_005_ARTICLE_ALIGNMENT.md`. The companion code remains the source of truth.

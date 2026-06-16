@@ -33,6 +33,11 @@ Each worked computational companion ships with both a runnable `.py` script and 
 | [The Integrated National-Security Diligence Workflow](https://sheepdogprosperitypartners.com/national-security-diligence-workflow/) | `national_security_diligence/notebooks/` | `D1_integrated_workflow.py` | `D1_integrated_workflow.ipynb` |
 | [The Screening Toolkit](https://sheepdogprosperitypartners.com/national-security-screening-toolkit/) | `national_security_diligence/notebooks/` | `D2_screening_toolkit.py` | `D2_screening_toolkit.ipynb` |
 | [Forced Divestiture vs. Forfeiture](https://sheepdogprosperitypartners.com/divestiture-vs-forfeiture-anatomy/) | `national_security_diligence/notebooks/` | `D3_remedy_comparison_timeline.py` | `D3_remedy_comparison_timeline.ipynb` |
+| Cross-Border Open-Source Diligence Atlas, pending publication | `cross_border_diligence_atlas/notebooks/` | `BR_01_entity_registry_screen.py` | `BR_01_entity_registry_screen.ipynb` |
+| Cross-Border Open-Source Diligence Atlas, pending publication | `cross_border_diligence_atlas/notebooks/` | `BR_02_sanctions_procurement_crosscheck.py` | `BR_02_sanctions_procurement_crosscheck.ipynb` |
+| Cross-Border Open-Source Diligence Atlas, pending publication | `cross_border_diligence_atlas/notebooks/` | `AR_01_rns_entity_screen.py` | `AR_01_rns_entity_screen.ipynb` |
+| Cross-Border Open-Source Diligence Atlas, pending publication | `cross_border_diligence_atlas/notebooks/` | `AR_02_boletin_timeline_builder.py` | `AR_02_boletin_timeline_builder.ipynb` |
+| Cross-Border Open-Source Diligence Atlas, pending publication | `cross_border_diligence_atlas/notebooks/` | `US_memo_country_risk_flags.py` | `US_memo_country_risk_flags.ipynb` |
 
 ## Run
 
