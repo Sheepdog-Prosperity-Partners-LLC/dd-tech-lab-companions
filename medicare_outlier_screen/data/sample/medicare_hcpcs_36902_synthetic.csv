@@ -1,0 +1,13 @@
+Rndrng_NPI,Rndrng_Prvdr_Last_Org_Name,Rndrng_Prvdr_Type,Rndrng_Prvdr_State_Abrvtn,Tot_Benes,Tot_Srvcs,Tot_Bene_Day_Srvcs,Avg_Sbmtd_Chrg,Avg_Mdcr_Alowd_Amt,Avg_Mdcr_Pymt_Amt
+9000000001,Synthetic Peer 1,Vascular Surgery,TX,20,20,20,1500,1000,800
+9000000002,Synthetic Peer 2,Vascular Surgery,TX,22,21,21,1500,1000,800
+9000000003,Synthetic Peer 3,Vascular Surgery,TX,19,20,20,1500,1000,800
+9000000004,Synthetic Peer 4,Vascular Surgery,TX,24,22,22,1500,1000,800
+9000000005,Synthetic Peer 5,Vascular Surgery,TX,21,24,24,1500,1000,800
+9000000006,Synthetic Outlier,Vascular Surgery,TX,20,200,200,1500,1000,800
+9000000010,Synthetic Other Peer 1,Internal Medicine,TX,20,21,21,800,300,240
+9000000011,Synthetic Other Peer 2,Internal Medicine,TX,20,20,20,800,300,240
+9000000012,Synthetic Other Peer 3,Internal Medicine,TX,20,22,22,800,300,240
+9000000013,Synthetic Other Peer 4,Internal Medicine,TX,20,19,19,800,300,240
+9000000014,Synthetic Other Peer 5,Internal Medicine,TX,20,20,20,800,300,240
+9000000015,Synthetic Other Peer 6,Internal Medicine,TX,20,21,21,800,300,240

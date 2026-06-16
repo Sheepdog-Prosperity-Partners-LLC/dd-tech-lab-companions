@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Companion artifact for DD Tech Lab Stochastic / Markov Article 009 —
+"""Companion artifact for DD Tech Lab Stochastic / Markov Article 009,
 Higher-Order and Variable-Order Markov Models for Long-Memory Fraud Schemes.
 
 End-to-end reproducible script. Consolidates the k-th-order Markov fitter,
@@ -189,7 +189,7 @@ def inject_lapping(sequence, inject_start, n_cycles):
 def main():
     np.random.seed(42)
     print("=" * 78)
-    print("DD Tech Lab Stochastic Article 009 — companion artifact")
+    print("DD Tech Lab Stochastic Article 009, companion artifact")
     print("Higher-Order + Variable-Order Markov for Long-Memory Fraud Schemes")
     print("=" * 78)
 
@@ -234,7 +234,7 @@ def main():
 
     k_counts = {k: fp_k.count(k) for k in sorted(set(fp_k))}
     print(f"  k-selection distribution: {k_counts}")
-    print(f"  PST size — mean: {np.mean(fp_pst):.2f}, std: {np.std(fp_pst):.2f}")
+    print(f"  PST size, mean: {np.mean(fp_pst):.2f}, std: {np.std(fp_pst):.2f}")
     print(f"  PST size 95th percentile: {int(np.percentile(fp_pst, 95))}")
     print(f"  Lapping PST size ({len(lap_tree)}) vs 95p threshold: "
           f"{'EXCEEDS' if len(lap_tree) > np.percentile(fp_pst, 95) else 'within'}")

@@ -1,0 +1,413 @@
+{
+  "prepared_by": "Noah Green CPA CFE",
+  "date": "2026-06-16",
+  "matter": "SPP-DDTL-REPO-OPS-2026",
+  "canonical_repo": "Sheepdog-Prosperity-Partners-LLC/dd-tech-lab-companions",
+  "local_repo": "/Users/noah.r.green/dd-tech-lab-companions",
+  "branch": "consolidate/dd-tech-lab-duality-2026-06-16",
+  "remote": "https://github.com/Sheepdog-Prosperity-Partners-LLC/dd-tech-lab-companions.git",
+  "manifest_note": "This manifest excludes its own hash by design because embedding a self-hash would change the file.",
+  "summary": {
+    "repo_files_changed_or_added_excluding_manifest": 49,
+    "article_files_changed": 6,
+    "inventory_rows": 52,
+    "inventory_status_counts": {
+      "complete": 18,
+      "complete_local_pending_publication": 1,
+      "excluded_chart_asset_tooling": 2,
+      "excluded_from_worked_example_scope": 31
+    },
+    "notebooks_reviewed": 26,
+    "notebook_review_status_counts": {
+      "PASS": 26
+    },
+    "screenshots": 78
+  },
+  "verification": [
+    {
+      "command": ".venv/bin/python tools/check_duality.py",
+      "result": "pass",
+      "evidence": "DD Tech Lab duality check passed, including cross_border_diligence_atlas/notebooks."
+    },
+    {
+      "command": ".venv/bin/python -m py_compile cross_border_diligence_atlas/notebooks/*.py cross_border_diligence_atlas/src/crossborder_dd/*.py cross_border_diligence_atlas/tests/*.py tools/check_duality.py",
+      "result": "pass",
+      "evidence": "exit code 0"
+    },
+    {
+      "command": "PYTHONPATH=cross_border_diligence_atlas/src direct test harness",
+      "result": "pass",
+      "evidence": "5 cross-border parser, normalizer, sanctions, and timeline tests passed."
+    },
+    {
+      "command": "for f in cross_border_diligence_atlas/notebooks/*.py; do .venv/bin/python \"$f\"; done",
+      "result": "pass",
+      "evidence": "5 scripts reproduced synthetic or redacted outputs."
+    },
+    {
+      "command": "jupyter nbconvert --execute --to notebook --inplace cross_border_diligence_atlas/notebooks/*.ipynb",
+      "result": "pass",
+      "evidence": "5 cross-border notebooks executed; output-cell counts are 5, 4, 6, 3, and 3."
+    },
+    {
+      "command": "Chrome headless screenshot capture from notebook HTML exports",
+      "result": "pass",
+      "evidence": "15 cross-border screenshots captured locally under ignored output/notebook_review/screenshots/."
+    },
+    {
+      "command": ".venv/bin/python stochastic_markov/003_hidden_markov_earnings_management.py and .venv/bin/python stochastic_markov/005_random_walk_stationarity.py",
+      "result": "pass",
+      "evidence": "Alignment patch prepared at output/MARKOV_003_005_ARTICLE_ALIGNMENT.md with current deterministic values."
+    }
+  ],
+  "unresolved_flags": [
+    {
+      "id": "LIVE_SITE_POINTER",
+      "status": "operator_wordpress_edit_required",
+      "detail": "Live DD Tech Lab index still requires the owner/operator URL swap documented in output/SITE_POINTER_FIX.md."
+    },
+    {
+      "id": "MARKOV_003_005_WORDPRESS_ALIGNMENT",
+      "status": "operator_wordpress_edit_required",
+      "detail": "Apply output/MARKOV_003_005_ARTICLE_ALIGNMENT.md to the live article text; code and repo artifacts are aligned."
+    },
+    {
+      "id": "CHART_TOOLING_SCOPE",
+      "status": "classified_excluded",
+      "detail": "Gold/watch and SNAP chart builders remain classified as article asset tooling, not worked-example companions."
+    }
+  ],
+  "changed_or_added_files": [
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "M",
+      "path": "README.md",
+      "size_bytes": 7654
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "M",
+      "path": "output/DD_TECH_LAB_INVENTORY_2026-06-16.csv",
+      "size_bytes": 17872
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "M",
+      "path": "output/notebook_review/REVIEW_LOG.md",
+      "size_bytes": 3214
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "M",
+      "path": "output/notebook_review/review_results.json",
+      "size_bytes": 19806
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "M",
+      "path": "tools/check_duality.py",
+      "size_bytes": 1549
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "cross_border_diligence_atlas/LICENSE",
+      "size_bytes": 1068
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "cross_border_diligence_atlas/README.md",
+      "size_bytes": 4098
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "cross_border_diligence_atlas/data/redacted_outputs/AR_01_rns_entity_screen.csv",
+      "size_bytes": 1050
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "cross_border_diligence_atlas/data/redacted_outputs/AR_02_boletin_timeline_builder.csv",
+      "size_bytes": 521
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "cross_border_diligence_atlas/data/redacted_outputs/BR_01_entity_registry_screen.csv",
+      "size_bytes": 1143
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "cross_border_diligence_atlas/data/redacted_outputs/BR_02_sanctions_procurement_crosscheck.csv",
+      "size_bytes": 653
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "cross_border_diligence_atlas/data/redacted_outputs/README.md",
+      "size_bytes": 510
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "cross_border_diligence_atlas/data/redacted_outputs/US_memo_country_risk_flags.csv",
+      "size_bytes": 5425
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "cross_border_diligence_atlas/data/sample/README.md",
+      "size_bytes": 178
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "cross_border_diligence_atlas/data/synthetic/argentina_rns.csv",
+      "size_bytes": 102
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "cross_border_diligence_atlas/data/synthetic/brazil_entities.csv",
+      "size_bytes": 97
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "cross_border_diligence_atlas/data/synthetic/brazil_sanctions.csv",
+      "size_bytes": 95
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "cross_border_diligence_atlas/data/synthetic/gazette_events.csv",
+      "size_bytes": 382
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "cross_border_diligence_atlas/docs/argentina_source_map.md",
+      "size_bytes": 3809
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "cross_border_diligence_atlas/docs/brazil_source_map.md",
+      "size_bytes": 3675
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "cross_border_diligence_atlas/docs/data_dictionary.md",
+      "size_bytes": 3225
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "cross_border_diligence_atlas/docs/data_sources.md",
+      "size_bytes": 3179
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "cross_border_diligence_atlas/docs/dependency_review.md",
+      "size_bytes": 2669
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "cross_border_diligence_atlas/docs/limitations.md",
+      "size_bytes": 2578
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "cross_border_diligence_atlas/docs/update_log.md",
+      "size_bytes": 640
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "cross_border_diligence_atlas/notebooks/AR_01_rns_entity_screen.ipynb",
+      "size_bytes": 11771
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "cross_border_diligence_atlas/notebooks/AR_01_rns_entity_screen.py",
+      "size_bytes": 2950
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "cross_border_diligence_atlas/notebooks/AR_02_boletin_timeline_builder.ipynb",
+      "size_bytes": 9251
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "cross_border_diligence_atlas/notebooks/AR_02_boletin_timeline_builder.py",
+      "size_bytes": 1203
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "cross_border_diligence_atlas/notebooks/BR_01_entity_registry_screen.ipynb",
+      "size_bytes": 14073
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "cross_border_diligence_atlas/notebooks/BR_01_entity_registry_screen.py",
+      "size_bytes": 2926
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "cross_border_diligence_atlas/notebooks/BR_02_sanctions_procurement_crosscheck.ipynb",
+      "size_bytes": 9384
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "cross_border_diligence_atlas/notebooks/BR_02_sanctions_procurement_crosscheck.py",
+      "size_bytes": 2139
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "cross_border_diligence_atlas/notebooks/US_memo_country_risk_flags.ipynb",
+      "size_bytes": 26985
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "cross_border_diligence_atlas/notebooks/US_memo_country_risk_flags.py",
+      "size_bytes": 10130
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "cross_border_diligence_atlas/pyproject.toml",
+      "size_bytes": 375
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "cross_border_diligence_atlas/requirements.txt",
+      "size_bytes": 132
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "cross_border_diligence_atlas/src/crossborder_dd/__init__.py",
+      "size_bytes": 195
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "cross_border_diligence_atlas/src/crossborder_dd/argentina_rns_parser.py",
+      "size_bytes": 1411
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "cross_border_diligence_atlas/src/crossborder_dd/brazil_cnpj_parser.py",
+      "size_bytes": 1567
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "cross_border_diligence_atlas/src/crossborder_dd/brazil_sanctions_screen.py",
+      "size_bytes": 1809
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "cross_border_diligence_atlas/src/crossborder_dd/country_registry_map.py",
+      "size_bytes": 2261
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "cross_border_diligence_atlas/src/crossborder_dd/export_csv.py",
+      "size_bytes": 626
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "cross_border_diligence_atlas/src/crossborder_dd/gazette_timeline_builder.py",
+      "size_bytes": 1303
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "cross_border_diligence_atlas/src/crossborder_dd/normalize_names.py",
+      "size_bytes": 780
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "cross_border_diligence_atlas/tests/test_normalize_names.py",
+      "size_bytes": 351
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "cross_border_diligence_atlas/tests/test_notebook_reproducibility.py",
+      "size_bytes": 14233
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "cross_border_diligence_atlas/tests/test_parsers_and_timeline.py",
+      "size_bytes": 1208
+    },
+    {
+      "surface": "dd-tech-lab-companions",
+      "status": "??",
+      "path": "output/MARKOV_003_005_ARTICLE_ALIGNMENT.md",
+      "size_bytes": 2851
+    }
+  ],
+  "changed_links": [
+    {
+      "article": "article_A1_cfius_inbound_screen.md",
+      "change": "Applied DD Lab link now points to canonical DD Tech Lab child folder.",
+      "new_target": "https://github.com/Sheepdog-Prosperity-Partners-LLC/dd-tech-lab-companions/tree/main/national_security_diligence"
+    },
+    {
+      "article": "article_A2_outbound_reverse_cfius.md",
+      "change": "Applied DD Lab link now points to canonical DD Tech Lab child folder and wording changed from sorting hat to sorting aid.",
+      "new_target": "https://github.com/Sheepdog-Prosperity-Partners-LLC/dd-tech-lab-companions/tree/main/national_security_diligence"
+    },
+    {
+      "article": "pillar_national_security_diligence_stack.md",
+      "change": "Companion lab routing changed from local series folder path to canonical repo child folder.",
+      "new_target": "https://github.com/Sheepdog-Prosperity-Partners-LLC/dd-tech-lab-companions/tree/main/national_security_diligence"
+    },
+    {
+      "article": "article_D1_integrated_diligence_workflow.md",
+      "change": "Selected-source lab pointer changed from local series folder path to canonical repo child wrapper.",
+      "new_target": "dd-tech-lab-companions/national_security_diligence/notebooks/D1_integrated_workflow.py"
+    },
+    {
+      "article": "article_D2_screening_toolkit_code.md",
+      "change": "Repository description, folder tree, run path, and selected-source pointers changed from standalone local lab to canonical repo child folder.",
+      "new_target": "https://github.com/Sheepdog-Prosperity-Partners-LLC/dd-tech-lab-companions/tree/main/national_security_diligence"
+    },
+    {
+      "article": "article_D3_divestiture_vs_forfeiture_anatomy.md",
+      "change": "Selected-source lab pointer changed from local series folder module to canonical repo child wrapper.",
+      "new_target": "dd-tech-lab-companions/national_security_diligence/notebooks/D3_remedy_comparison_timeline.py"
+    }
+  ],
+  "follow_on": {
+    "cross_border_atlas": "generated_now",
+    "markov_003_005": "article_alignment_patch_prepared",
+    "pr": "https://github.com/Sheepdog-Prosperity-Partners-LLC/dd-tech-lab-companions/pull/3"
+  }
+}

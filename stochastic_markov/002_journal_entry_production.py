@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Companion artifact for DD Tech Lab Stochastic / Markov Article 002 —
+"""Companion artifact for DD Tech Lab Stochastic / Markov Article 002,
 Modeling Journal-Entry Sequences in Production.
 
 End-to-end reproducible script. Consolidates the subledger mapping, the mid-period
@@ -155,7 +155,7 @@ def main():
     m_family = N_ENTITIES * N_MONTHS * N_WINDOWS_PER_ENTITY_MONTH
 
     print("=" * 78)
-    print("DD Tech Lab Stochastic Article 002 — companion artifact")
+    print("DD Tech Lab Stochastic Article 002, companion artifact")
     print(f"Subledger encoding: {N_STATES} states; m_family = {m_family} tests")
     print("=" * 78)
 
