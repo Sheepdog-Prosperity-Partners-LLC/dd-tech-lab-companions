@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it using the metadata below."
+title: "DD Tech Lab Companions"
+abstract: >-
+  Runnable Python and notebook companions for the Sheepdog Prosperity Partners
+  DD Tech Lab publication. Each companion is the worked-example code behind a
+  due-diligence article, shipping both a runnable script and a paired notebook.
+type: software
+authors:
+  - family-names: Green
+    given-names: Noah
+    orcid: "https://orcid.org/0009-0006-0626-6469"
+    affiliation: "Sheepdog Prosperity Partners, LLC"
+repository-code: "https://github.com/Sheepdog-Prosperity-Partners-LLC/dd-tech-lab-companions"
+url: "https://sheepdogprosperitypartners.com/dd-tech-lab"
+license: MIT
+keywords:
+  - due diligence
+  - forensic accounting
+  - fraud detection
+  - financial statement analysis
+  - public records
+  - anti-money laundering

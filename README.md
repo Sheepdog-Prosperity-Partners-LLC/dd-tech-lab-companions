@@ -1,6 +1,10 @@
 # DD Tech Lab Companions
 
+[![DOI](https://zenodo.org/badge/1239117464.svg)](https://zenodo.org/badge/latestdoi/1239117464)
+
 Prepared by Noah Green CPA CFE.
+
+> Citation: each tagged release of this repository is archived on Zenodo and assigned a DOI. The badge above resolves to the latest version DOI once the first GitHub release is published. See `CITATION.cff` for citation metadata.
 
 Runnable Python and notebook companions for DD Tech Lab articles published by Sheepdog Prosperity Partners.
 
