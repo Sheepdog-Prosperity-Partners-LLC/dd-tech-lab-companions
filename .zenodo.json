@@ -1,0 +1,28 @@
+{
+  "title": "DD Tech Lab Companions",
+  "description": "Runnable Python and notebook companions for the Sheepdog Prosperity Partners DD Tech Lab publication. Each companion is the worked-example code behind a due-diligence article at https://sheepdogprosperitypartners.com/dd-tech-lab, shipping both a runnable script and a paired notebook.",
+  "upload_type": "software",
+  "license": "MIT",
+  "creators": [
+    {
+      "name": "Green, Noah",
+      "orcid": "0009-0006-0626-6469",
+      "affiliation": "Sheepdog Prosperity Partners, LLC"
+    }
+  ],
+  "keywords": [
+    "due diligence",
+    "forensic accounting",
+    "fraud detection",
+    "financial statement analysis",
+    "public records",
+    "anti-money laundering"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://sheepdogprosperitypartners.com/dd-tech-lab",
+      "relation": "isDocumentedBy",
+      "scheme": "url"
+    }
+  ]
+}
